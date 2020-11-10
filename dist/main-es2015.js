@@ -2658,7 +2658,7 @@ class CustomerComponent {
         if (this.fileChange)
             return this.fileURL;
         else
-            return this.baseURL + this.formGroup.value.avatar;
+            return this.formGroup.value.avatar;
     }
     //for date
     getDateString(ss) {
@@ -3386,7 +3386,7 @@ class SystemUserComponent {
         if (this.fileChange)
             return this.fileURL;
         else
-            return this.baseURL + this.formGroup.value.avatar;
+            return this.formGroup.value.avatar;
     }
     //for date
     getDateString(ss) {
