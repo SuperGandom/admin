@@ -16,6 +16,7 @@ let login = async (req, res) => {
     const user = await employDAO.get({username: username});
    
     if (!user) return res.status(403).json({message: 'username incorrect'});
+    if (user[0].status="off") return res.status(403).json({message: 'Your account is suspended.'});
     //password
     const passwordValid = await verifyPassword(password, user[0].password);
     if (passwordValid) {
