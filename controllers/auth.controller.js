@@ -14,8 +14,7 @@ let login = async (req, res) => {
     const { username, password } = req.body;
     //username
     const user = await employDAO.get({username: username});
-    const d = await employDAO.get({});
-    console.log(d);
+   
     if (!user) return res.status(403).json({message: 'username incorrect'});
     //password
     const passwordValid = await verifyPassword(password, user[0].password);
@@ -32,7 +31,6 @@ let login = async (req, res) => {
       });
     }else res.status(403).json({message: 'password incorrect'});
   } catch (error) {
-    console.log(error);
     return res.status(400).json({
       message: 'Something went wrong.'
     });
