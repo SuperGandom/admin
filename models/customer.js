@@ -24,8 +24,8 @@ var Schema = new mongoose.Schema({
     },
     status:{
         type: String,
-        enum:["on","off"],
-        default:"on"
+        enum:["active","pending","suspend"],
+        default:"active"
     },
 });
 module.exports = Schema;
