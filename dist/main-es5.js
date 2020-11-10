@@ -5101,7 +5101,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAvatarSource",
         value: function getAvatarSource() {
-          if (this.fileChange) return this.fileURL;else return this.formGroup.value.avatar;
+          if (this.fileChange) return this.fileURL;else return this.baseURL + this.formGroup.value.avatar;
         } //for date
 
       }, {
@@ -6565,7 +6565,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getAvatarSource",
         value: function getAvatarSource() {
-          if (this.fileChange) return this.fileURL;else return this.formGroup.value.avatar;
+          if (this.fileChange) return this.fileURL;else return this.baseURL + this.formGroup.value.avatar;
         } //for date
 
       }, {
@@ -9584,7 +9584,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      apiBaseUrl: 'localhost:3000/'
+      apiBaseUrl: '198.199.77.142:3000/'
     }; // apiBaseUrl:'198.199.77.142:3000/'
 
     /*

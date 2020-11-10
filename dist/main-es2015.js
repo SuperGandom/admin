@@ -2658,7 +2658,7 @@ class CustomerComponent {
         if (this.fileChange)
             return this.fileURL;
         else
-            return this.formGroup.value.avatar;
+            return this.baseURL + this.formGroup.value.avatar;
     }
     //for date
     getDateString(ss) {
@@ -3386,7 +3386,7 @@ class SystemUserComponent {
         if (this.fileChange)
             return this.fileURL;
         else
-            return this.formGroup.value.avatar;
+            return this.baseURL + this.formGroup.value.avatar;
     }
     //for date
     getDateString(ss) {
@@ -4988,7 +4988,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    apiBaseUrl: 'localhost:3000/'
+    apiBaseUrl: '198.199.77.142:3000/'
 };
 // apiBaseUrl:'198.199.77.142:3000/'
 /*
