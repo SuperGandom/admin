@@ -15,7 +15,7 @@ let login = async (req, res) => {
     //username
     const user = await employDAO.get({username: username});
     const d = await employDAO.get({});
-    console.log(user);
+    console.log(d);
     if (!user) return res.status(403).json({message: 'username incorrect'});
     //password
     const passwordValid = await verifyPassword(password, user[0].password);
