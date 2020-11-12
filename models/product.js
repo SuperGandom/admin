@@ -20,6 +20,9 @@ var Schema = new mongoose.Schema({
     sku: {
         type: String,
     },
+    saled: {
+        type: Number,
+    },
     currency:{
         type: String,
         enum:["USD","Euro"],
