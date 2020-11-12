@@ -6,7 +6,7 @@ var Schema = new mongoose.Schema({
     name: { type: String, required: 'name can\'t be empty', unique: true },
     customer: { type: String,required: 'Customer can\'t be empty' },
     puchased: {
-        type: String
+        type: Array //[['item',3],['item',5]]
     },
     total: {
         type: String,
@@ -17,8 +17,8 @@ var Schema = new mongoose.Schema({
     },
     status:{
         type: String,
-        enum:["Hold","delivered","rejected"],
-        default:"Hold"
+        enum:["On Hold","Delivered","Paid"],
+        default:"On Hold"
     },
 });
 module.exports = Schema;

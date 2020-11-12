@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Schema = require('../models/customer');
-const Models = mongoose.model('Customer',Schema);
+const Schema = require('../models/product');
+const Models = mongoose.model('Product',Schema);
 const get = criteria =>
   new Promise((resolve, reject) => {
     Models.find(criteria)

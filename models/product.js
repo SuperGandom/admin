@@ -20,8 +20,16 @@ var Schema = new mongoose.Schema({
     sku: {
         type: String,
     },
-    image: {
+    currency:{
         type: String,
+        enum:["USD","Euro"],
+        default:"USD"
+    },
+    image: {
+        type: Array,
+    },
+    video: {
+       type: String,
     },
     detail: {
         type: String,

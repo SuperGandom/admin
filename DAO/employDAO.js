@@ -15,7 +15,20 @@ const create = objToSave =>
       .then(client => resolve(client))
       .catch(err => reject(err));
   });
+const insert = (objToSave) =>
 
+  new Promise((resolve, reject) => {
+    Models.insertMany(objToSave,{ ordered: true })
+      .then(client => resolve(client))
+      .catch(err =>   reject(err));
+  });
+  const remove = (objToSave) =>
+
+  new Promise((resolve, reject) => {
+    Models.remove(objToSave)
+      .then(client => resolve(client))
+      .catch(err =>   reject(err));
+  });  
 const update = (criteria, dataToSet, options) =>
   new Promise((resolve, reject) => {
     options.lean = true;
@@ -37,6 +50,8 @@ const deletes = criteria =>
 module.exports = {
   update: update,
   create: create,
-  delete: deletes,
-  get: get
+  deletes: deletes,
+  get: get,
+  insert: insert,
+  remove:remove,
 };
