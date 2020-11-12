@@ -7072,7 +7072,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    apiBaseUrl: 'localhost:3000/'
+    apiBaseUrl: '198.199.77.142:3000/'
 };
 // apiBaseUrl:'198.199.77.142:3000/'
 /*
