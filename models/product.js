@@ -3,7 +3,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 var Schema = new mongoose.Schema({
-    title: { type: String, required: 'title can\'t be empty', unique: true },
+    title: { type: String, required: 'title can\'t be empty', unique:true},
+    detail: {
+        type: String,
+    },
     category: { type: String,required: 'Category can\'t be empty' },
     regularPrice: {
         type: Number,
@@ -13,34 +16,30 @@ var Schema = new mongoose.Schema({
         type: Number,
         default:0
     },
-    quantity: {
+    taxRate: {
         type: Number,
         default:0
     },
-    sku: {
+    barcode: {
+        type: Number,
+    },
+    brand: {
         type: String,
     },
-    saled: {
-        type: Number,
+    supplier: {
+        type: String,
     },
     currency:{
         type: String,
         enum:["USD","Euro"],
         default:"USD"
     },
-    image: {
-        type: Array,
-    },
-    video: {
-       type: String,
-    },
-    detail: {
-        type: String,
-    },
     created_at:{
-      type: Date,
-      default: new Date()
+      type: Date
     },
+    currentStock: { type: Number, default:0},
+    minStock: { type: Number, default:0},
+    maxStock: { type: Number, default:100},
     status:{
         type: String,
         enum:["out of stock","in stock"],

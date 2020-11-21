@@ -1,0 +1,60 @@
+const mongoose = require('mongoose');
+const Schema = require('../models/report');
+const Models = mongoose.model('Report',Schema);
+// const uniquekeys = Models.collection.getIndexes();
+// console.log(uniquekeys)
+// Models.collection.dropIndex("your_index_name_here");
+const get = (criteria,sort) =>
+  new Promise((resolve, reject) => {
+    Models.find(criteria).sort(sort)
+      .then(client => resolve(client))
+      .catch(err => reject(err));
+  });
+
+const create = objToSave =>
+  new Promise((resolve, reject) => {
+    new Models(objToSave)
+      .save()
+      .then(client => resolve(client))
+      .catch(err => reject(err));
+  });
+const insert = (objToSave) =>
+
+  new Promise((resolve, reject) => {
+    Models.insertMany(objToSave,{ ordered: true })
+      .then(client => resolve(client))
+      .catch(err =>   reject(err));
+  });
+  const remove = (objToSave) =>
+
+  new Promise((resolve, reject) => {
+    Models.remove(objToSave)
+      .then(client => resolve(client))
+      .catch(err =>   reject(err));
+  });  
+const update = (criteria, dataToSet, options) =>
+  new Promise((resolve, reject) => {
+    options.lean = true;
+    options.new = true;
+    Models.findOneAndUpdate(criteria, dataToSet, options)
+      .then(client => resolve(client))
+      .catch(err => reject(err));
+  });
+
+const deletes = criteria =>
+  new Promise((resolve, reject) => {
+    Models.findOneAndRemove(criteria)
+      .exec()
+      .then(client => resolve(client))
+      .catch(err => reject(err));
+  });
+
+
+module.exports = {
+  update: update,
+  create: create,
+  deletes: deletes,
+  get: get,
+  insert: insert,
+  remove:remove,
+};

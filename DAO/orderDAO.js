@@ -3,7 +3,7 @@ const Schema = require('../models/order');
 const Models = mongoose.model('Order',Schema);
 const get = (criteria,sort) =>
   new Promise((resolve, reject) => {
-    Models.find(criteria).sort(sort)
+    Models.find(criteria,null, {sort: sort})
       .then(client => resolve(client))
       .catch(err => reject(err));
   });
