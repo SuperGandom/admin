@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 var Schema = new mongoose.Schema({
     username: { type: String, required: 'fullname can\'t be empty', unique: true },
-    avatar: { type: String,required: 'Avatar can\'t be empty' },
+    avatar: { type: String, },
     password: {
         type: String,
         required: 'Password can\'t be empty',
